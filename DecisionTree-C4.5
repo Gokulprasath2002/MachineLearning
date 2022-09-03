@@ -1,0 +1,11 @@
+import numpy as np
+import pandas as pd
+from chefboost import Chefboost as chef
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report,confusion_matrix
+data=pd.read_csv("diabetes.csv")
+config={'algorihtm':'C4.5'}
+model= chef.fit(data,config=config,target_label='Outcome')
+config={'algorihtm':'ID3'}
+model= chef.fit(data,config=config,target_label='Outcome')
+#Then we can make predictions using chef.predict(model,pass the values as parameters)
